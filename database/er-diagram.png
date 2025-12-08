@@ -1,0 +1,77 @@
+      USERS
+  ----------------
+  id PK
+  name
+  email
+  password
+  role
+
+      PROJECTS
+  ----------------
+  id PK
+  name
+  budget
+  spent
+  status
+  start_date
+  end_date
+
+      PROJECT_PROGRESS
+  -------------------------
+  id PK
+  project_id FK → projects.id
+  planned_percent
+  actual_percent
+  as_of_date
+
+      RISK_LOGS
+  -------------------------
+  id PK
+  project_id FK
+  risk_score
+  risk_level
+
+      ACCOUNTS
+  -------------------------
+  id PK
+  name
+  type
+
+      JOURNAL_ENTRIES
+  -------------------------
+  id PK
+  account_id FK → accounts.id
+  debit
+  credit
+  description
+
+      VENDORS
+  -------------------------
+  id PK
+  name
+  contact
+  email
+
+      CUSTOMERS
+  -------------------------
+  id PK
+  name
+  contact
+  email
+
+      INVOICES
+  -------------------------
+  id PK
+  project_id FK
+  vendor_id FK
+  customer_id FK
+  amount
+  status
+  currency
+
+      PAYMENTS
+  -------------------------
+  id PK
+  invoice_id FK → invoices.id
+  amount
+  payment_date
